@@ -11,6 +11,9 @@
 	.container
 		margin-bottom 6rem
 
+		@media (min-width 1300px)
+			width 1280px
+
 	&__top-description
 		margin-bottom 3rem
 		margin-top 3rem
@@ -27,8 +30,9 @@
 
 	&__cards
 		display flex
+		flex-wrap wrap
 		flex-direction row
-		justify-content space-between
+		justify-content space-around
 		margin-bottom 7.2rem
 
 		@media (max-width tablet-down)
@@ -58,12 +62,12 @@
 		padding 1.5rem
 		width 50%
 
-		&:first-child {
-			padding-left 0
+		&:nth-child(2n + 1) {
+			padding-left 3.8rem
 		}
 
-		&:last-child {
-			padding-right 0
+		&:nth-child(2n + 2) {
+			padding-right 3.8rem
 		}
 
 	.slick-dots
