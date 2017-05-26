@@ -1,0 +1,54 @@
+mixin preview()
+	+b.preview
+		+e.items-wrapper
+			+e.item
+				+e.phone.--active
+					img.img-responsive(src="images/speechace-ios.png" data-rjs="3")
+
+				+e.descr
+					span SPEECHACE APP
+					span (ios)
+
+			+e.item
+				+e.phone
+					img.img-responsive(src="images/speechace-ios.png" data-rjs="3")
+
+				+e.descr
+					span Englace
+					span (ios)
+
+			+e.item
+				+e.phone
+					img.img-responsive(src="images/speechace-android.png" data-rjs="3")
+
+				+e.descr
+					span SPEECHACE APP
+					span (ANdroid/Chrome)
+
+		+b.controls
+			+e.wrapper.--active
+				+e.item
+					+e.inner
+				+e.line
+
+				+e.description
+					span SPEECHACE APP
+					span (ios)
+
+			+e.wrapper
+				+e.item
+					+e.inner
+				+e.line
+
+				+e.description
+					span Englace
+					span (ios)
+
+			+e.wrapper
+				+e.item
+					+e.inner
+				+e.line
+
+				+e.description
+					span SPEECHACE APP
+					span (ANdroid/Chrome)

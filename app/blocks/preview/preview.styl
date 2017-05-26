@@ -1,0 +1,142 @@
+.preview
+	display block
+
+	&__items-wrapper
+		margin-bottom 7.1rem
+
+	&__item
+		display flex
+		flex-grow 1
+		justify-content center
+
+		@media (max-width tablet-down)
+			padding 1rem
+
+	&__phone
+		border-radius 27px / 31px 31px 31px 31px
+		transition all .3s ease-in-out
+
+		&--active
+			box-shadow 0 0 25px 0 rgba(0, 53, 118, .25)
+			transform scale(1.14)
+
+			@media (max-width tablet-down)
+				box-shadow none
+				transform none
+
+	&__descr
+		color avocado-two
+		display flex
+		flex-direction column
+		font-size 15.9px
+		font-weight 500
+		line-height 1.51
+		padding 2rem
+		text-align center
+		text-transform uppercase
+
+		@media (min-width tablet)
+			display none
+
+	.slick-slide img
+		border-radius 27px / 31px 31px 31px 31px
+		box-shadow 0 0 25px 0 rgba(0, 53, 118, .25)
+		margin 0 auto
+
+	.slick-next,
+	.slick-prev
+		top 88%
+		z-index 1
+
+	.slick-prev
+		left .3rem
+
+	.slick-next
+		right .3rem
+
+	.slick-prev:before,
+	.slick-next:before
+		color bright-cyan
+		font-size 2.8rem
+		opacity .25
+
+	.slick-prev:before
+		content '\e901'
+		font-family icon-font
+		opacity .25
+
+	.slick-next:before
+		content '\e902'
+		font-family icon-font
+
+	.slick-dots
+		bottom -1.2rem
+
+.controls
+	&__wrapper
+		display flex
+		flex-grow 1
+		justify-content center
+		margin-bottom 7.5rem
+		position relative
+
+		&:not(:last-child)
+			.controls__line
+				border-bottom 2px solid bright-cyan
+				display block
+				left 50%
+				position absolute
+				top 0
+				width 100%
+
+		&--active
+			.controls__item
+				background-color white
+				border solid 4px avocado
+				height 3.6rem
+				width 3.6rem
+
+			.controls__inner
+				opacity 1
+				transform scale(1)
+				visibility visible
+
+			.controls__description
+				color avocado
+
+	&__inner
+		background-color avocado-two
+		border-radius 50%
+		height 2rem
+		opacity 0
+		transform scale(.1)
+		transition all .3s ease
+		visibility hidden
+		width 2rem
+
+	&__item
+		align-items center
+		background-color white
+		border solid 4px bright-cyan
+		border-radius 50%
+		display flex
+		height 20px
+		justify-content center
+		left 50%
+		position absolute
+		transform translate(-50%, -50%)
+		transition all .3s ease
+		width 20px
+		z-index 1
+
+	&__description
+		align-items center
+		color azure
+		display flex
+		flex-direction column
+		font-size 1.6rem
+		font-weight 500
+		padding-top 4.5rem
+		position absolute
+		text-align center
+		text-transform uppercase

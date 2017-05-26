@@ -1,0 +1,27 @@
+include ../section-heading/section-heading
+include ../trusted-card/trusted-card
+include ../quote-card/quote-card
+
+mixin trusted()
+	+b.trusted(id="customers")
+		.container
+			+e.top-description(class="text-center")
+				+section-heading('Trusted and used by')
+
+			.col-md-10.col-md-push-1.trusted-wrapped
+				+e.cards
+					+trusted-card('images/city-university-logo.png')
+					+trusted-card('images/uni-orientale-logo.png')
+					+trusted-card('images/hero-logo.png')
+
+				+e.quotes
+					+b.quotes
+						+e.item
+							+quote-card
+								blockquote “The greatest proportion of students listed SpeechAce as their favorite part, based on their appreciation of the native speaker model and accompanying phonetic transcription.”
+								span.quote-card__name J. Aiello, Instructor at University of Naples
+
+						+e.item
+							+quote-card
+								blockquote “The greatest proportion of students listed SpeechAce as their favorite part, based on their appreciation of the native speaker model and accompanying phonetic transcription.”
+								span.quote-card__name J. Aiello, Instructor at University of Naples

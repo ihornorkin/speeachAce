@@ -1,0 +1,60 @@
+.section-api
+	display block
+	overflow hidden
+	padding 9.2rem 0 13.2rem 0
+	position relative
+	retina('../images/background-n-2.png', 3, cover, center center no-repeat)
+	z-index 3
+
+	@media (max-width tablet-down)
+		padding 7.3rem 0 5.2rem
+
+	&::before,
+	&::after
+		backface-visibility hidden
+		background white
+		bottom 100%
+		content ''
+		display block
+		height 100%
+		left 0
+		position absolute
+		right 0
+		transform skewY(1.5deg)
+		transform-origin 0 100%
+
+		@media (min-width hd)
+			display none
+
+	&::after
+		top 100%
+		transform skewY(-3deg)
+		transform-origin 0 100%
+
+	&__wrapper
+		padding 0 7.5rem
+
+	&__top-description
+		h3
+			color white
+
+	.section-heading
+		margin-bottom 0
+
+		@media (max-width tablet-down)
+			margin-bottom 1.3rem
+		h2,
+		&__heading
+			color white
+
+	h2
+		opacity 2
+
+	.api-steps
+		padding 9.7rem 0 11.4rem
+
+		@media (max-width tablet-down)
+			padding 2.6rem  0 1.8rem
+
+	&__bottom-description
+		color white

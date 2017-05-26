@@ -1,0 +1,23 @@
+include ../nav/nav
+
+mixin intro-section()
+	+b.intro-section
+		+e.content-wrapper
+
+			// Navigation
+			+e.HEADER.nav.--fixed(id="header")
+				+nav()
+
+			// Map image
+			+e.img-map
+				img.img-responsive.center-block(src="images/elements.png" data-rjs="3")
+
+			// Description
+			+e.description(class="text-center")
+				h1 AI Speech Coach
+				h2 for Language Learners
+
+			//Buttons group
+			+e.buttons(class="text-center clearfix")
+				button.btn.sa-btn Try in Brouser
+				button.btn.sa-btn Try in moodle

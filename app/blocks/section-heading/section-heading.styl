@@ -1,0 +1,48 @@
+.section-heading
+	display block
+	position relative
+	text-align center
+	z-index 5
+
+	&.section-heading--white
+		h2
+			color white
+			opacity .2
+
+		.section-heading__heading
+			color white
+
+	h2
+		color azure
+		font-size 10rem
+		font-weight 500
+		line-height .92
+		margin 0
+		opacity .1
+
+		@media (max-width tablet-down)
+			font-size 6rem
+			line-height 1
+
+	&__duplicate
+		left 50.1%
+		position absolute
+		top 43%
+		transform translate(-50%, -50%)
+		width 40%
+
+		@media (max-width tablet-down)
+			top 34%
+			width 70%
+
+	&__heading
+		color azure
+		font-size 5.23rem
+		font-weight 500
+		line-height .92
+		text-align center
+
+		@media (max-width tablet-down)
+			font-size 4.2rem
+			line-height 1.14
+

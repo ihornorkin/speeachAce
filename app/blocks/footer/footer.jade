@@ -1,0 +1,23 @@
+mixin footer()
+	+b.FOOTER.footer&attributes(attributes)
+		.container
+			+e.logo
+				img(src="images/speech-ace-favicon-eps.png" data-rjs="3")
+			+e.privacy
+				+e.privacy-wrapper
+					a(src="#") About Us
+					a(src="#") Terms of Service
+					a(src="#") Privacy Policy
+			+e.social
+				ul
+					li
+						a(src="#")
+							i.icon-facebook
+					li
+						a(src="#")
+							i.icon-twitter
+					li
+						a(src="#")
+							i.icon-linkedin2
+			+e.copyright
+				p.text-center Copyright &copy; SpeechAce LLC

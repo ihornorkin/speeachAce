@@ -1,0 +1,28 @@
+include ../section-heading/section-heading
+include ../team-gallery/team-gallery
+include ../contact-form/contact-form
+
+mixin our-team()
+	+b.our-team
+
+		+e.img-map
+			img(src="images/world-map-2.png")
+
+		.container
+			+e.top-description(class="text-center")(id="team")
+				+section-heading('Our Team', 'section-heading--white')
+				h3 Improving pronunciation one syllable at a time.
+
+			+e.team-gallery
+				.row
+					+team-gallery
+
+			.col-md-10.col-md-push-1(id="contact-us")
+				+e.bottom-description(class="text-center")
+					p We are a team of experienced software developers, linguists and business development personnel. We are passionate about learning languages and every team member speaks at least two languages. SpeechAce was founded because some of our team members wanted to develop a tool that they could use to reduce their native accent while speaking English.
+					p We understand the pain of not being able to speak a language fluently and therefore work hard every day to develop best in class products for our customers.
+
+			+e.contact-btn(class="text-center")
+				button#btn-contact-us-team.btn.sa-btn(data-toggle="modal" data-target="#contact-form") Contact Us
+
+			+contact-form

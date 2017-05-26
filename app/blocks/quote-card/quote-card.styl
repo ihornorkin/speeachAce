@@ -1,0 +1,31 @@
+.quote-card
+	background-color white
+	border-radius 1rem
+	box-shadow .6px 5px 25px 0 rgba(0, 53, 118, .25)
+	display block
+	overflow hidden
+	padding 3.5rem 3.3rem
+	position relative
+	text-align center
+
+	&::before
+		content ''
+		display block
+		height 126px
+		left 1rem
+		position absolute
+		retina('../images/quote.png', 3, cover, center center no-repeat)
+		top 0
+		width 142px
+		z-index 0
+
+		@media (max-width tablet)
+			left -4rem
+
+	&__wrapper
+		position relative
+
+	blockquote
+		border none
+		font-style italic
+		padding 0

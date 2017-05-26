@@ -1,0 +1,63 @@
+// Clear the float on any element.
+clearfix()
+	&:after
+		clear both
+		content ''
+		display table
+
+// Fix no working `-webkit-text-size-adjust: 100%;` in Android.
+fix-text-size-adjust()
+	background-image linear-gradient(transparent, transparent)
+
+// Set element size
+size($width, $height = $width)
+
+	height $height
+	width $width
+
+// Set margin on left & right
+margin-x($margin)
+	margin-left $margin
+	margin-right $margin
+
+// Set margin on top & bottom
+margin-y($margin)
+	margin-bottom $margin
+	margin-top $margin
+
+// Set pading on left & right
+padding-x($padding)
+	padding-left $padding
+	padding-right $padding
+
+// Set padding on top & bottom
+padding-y($padding)
+	padding-bottom $padding
+	padding-top $padding
+
+// Set one static retina image
+retinaBackground($image, $ext = 'png')
+	background-image url('../images/' + $image + '.' + $ext)
+
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+		background-image url('../images/' + $image + '@2x.' + $ext)
+
+// Fonts mixin
+font-url(file)
+	return '../fonts/' + file
+
+webfont(family, file, hack-chrome-windows = false, weight = 'normal')
+	@font-face
+		font-family family
+		src url(font-url(file + '.eot'))
+		src url(font-url(file + '.eot?#iefix')) format('embedded-opentype'),
+				url(font-url(file + '.woff')) format('woff'),
+				url(font-url(file + '.ttf')) format('truetype'),
+				url(font-url(file + '.svg#'+ family)) format('svg')
+		font-weight weight
+		font-style normal
+	if hack-chrome-windows
+		@media screen and (-webkit-min-device-pixel-ratio:0)
+			@font-face
+				font-family family
+				src url(font-url(file + '.svg#'+ family)) format('svg')

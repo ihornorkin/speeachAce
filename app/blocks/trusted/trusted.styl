@@ -1,0 +1,71 @@
+.trusted-wrapped
+	padding 0
+
+.trusted
+	display block
+	position relative
+
+	@media (max-width tablet)
+		margin-bottom -28rem
+
+	.container
+		margin-bottom 6rem
+
+	&__top-description
+		margin-bottom 3rem
+		margin-top 3rem
+
+		@media (max-width tablet-down)
+			margin-bottom 1.8rem
+			margin-top 15.5rem
+
+		.section-heading__heading
+			@media (max-width mobile)
+				display inline-block
+				max-width 250px
+				width 100%
+
+	&__cards
+		display flex
+		flex-direction row
+		justify-content space-between
+		margin-bottom 7.2rem
+
+		@media (max-width tablet-down)
+			align-items center
+			flex-direction column
+			margin-bottom 0
+
+	.trusted-card
+		height 19.2rem
+		margin 1.2rem 0
+		width 27rem
+
+	&__quotes
+		overflow hidden
+		position absolute
+		z-index 1
+
+		@media (max-width tablet)
+			position relative
+
+.quotes
+	display inline-block
+	font-size 0
+
+	&__item
+		display inline-block
+		padding 1.5rem
+		width 50%
+
+		&:first-child {
+			padding-left 0
+		}
+
+		&:last-child {
+			padding-right 0
+		}
+
+	.slick-dots
+		bottom -3.2rem
+		left 0

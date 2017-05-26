@@ -1,0 +1,103 @@
+#contact-form
+	.modal-content
+		border-radius 1.5rem
+
+	.modal-dialog
+		max-width 67rem
+		width 100%
+
+		@media (max-width tablet)
+			max-width 100%
+			width auto
+
+	.modal-header
+		border-bottom 0
+		padding-top 6.6rem
+
+		@media (max-width tablet-down)
+			padding-top 5.6rem
+
+		.close
+			opacity 1
+			position absolute
+			right 2.7rem
+			top 2.7rem
+			z-index 10
+
+		i
+			color pine-green
+			font-size 2rem
+
+	.section-heading
+		margin-bottom 7.2rem
+		margin-top 0
+
+		@media (max-width tablet-down)
+			margin-bottom 1.5rem
+
+	.modal-body
+		padding 0 5.3rem
+
+	.form-group
+		min-height 7.2rem
+		position relative
+
+		@media (max-width tablet-down)
+			min-height 9.6rem
+
+	label
+		color azure
+		font-size 1.8rem
+		font-weight normal
+		position absolute
+		transform translateY(12px)
+		transition transform .2s ease
+
+		&.focus
+			transform translateY(-20px)
+
+	input,
+	textarea
+		border none
+		border-bottom 1px solid azure
+		border-radius 0
+		box-shadow none
+		color pine-green
+		font-size 1.6rem
+		height auto
+		padding 1.1rem 0
+
+	textarea
+		margin-bottom 3rem
+		min-height 17rem
+
+		@media (max-width tablet-down)
+			margin-bottom 1.9rem
+			min-height 12rem
+
+	.sa-btn
+		margin-bottom 3rem
+		margin-top 1rem
+		min-width 24rem
+
+		@media (max-width tablet-down)
+			margin-bottom 6rem
+			text-transform uppercase
+
+	.section-heading
+		h2
+			font-size 7rem
+			font-weight 600
+
+			@media (max-width tablet-down)
+				font-size 5.6rem
+
+		&__duplicate
+			top 20%
+
+			@media (max-width tablet-down)
+				top -7%
+
+		&__heading
+			font-size 4.2rem
+			font-weight 600

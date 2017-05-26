@@ -1,0 +1,19 @@
+include ../section-heading/section-heading
+
+mixin what-we-do()
+	+b.what-we-do(id='what-we-do')
+		.container
+			+e.top-description(class="text-center")
+				+section-heading('What We Do')
+				h3 Speech Recognition Software For Pronunciation Improvement
+
+			+e.images
+				+b.img-slider
+					+e.item
+						img(src="images/what-we-do-1.jpg" class="img-responsive")
+					+e.item
+						img(src="images/what-we-do-2.jpg" class="img-responsive")
+
+			.col-md-8.col-md-push-2
+				+e.bottom-description(class="text-center")
+					p We develop speech recognition software that assists language learners in improving their pronunciation and lowering their accent. Our system is different from other speech recognition technologies because of our ability to recognize individual syllables and phonemes in any audio sample. We are then able to pinpoint the exact syllables and phonemes that a user is speaking incorrectly.

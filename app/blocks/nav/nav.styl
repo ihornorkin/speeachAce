@@ -1,0 +1,154 @@
+.headroom--not-top
+	.nav
+		align-items center
+		background-color white
+		box-shadow 0 0 25px 0 rgba(0, 0, 0, .15)
+		position relative
+		z-index 10
+
+		&__logo
+			display none
+
+		&__secondary-logo
+			display block
+
+		a
+			color pine-green
+			text-decoration none
+			text-transform uppercase
+			transition color .3s ease-in-out
+
+			&:focus,
+			&:hover,
+			&:active
+				color bright-cyan
+
+		.hamburger
+			&.is-active
+				.hamburger-inner
+					background-color transparent
+
+			.hamburger-inner,
+			.hamburger-inner::before,
+			.hamburger-inner::after
+				background-color bright-cyan
+
+.nav
+	background-color rgba(#065c88, .25)
+
+	&::before,
+	&::after
+		display none
+
+	&__nav-wrapper
+		align-items center
+		display flex
+		justify-content space-between
+		margin 0 auto
+		max-width 120rem
+		min-height 10rem
+
+	&__menu-left,
+	&__menu-right,
+	&__contact-btn
+		flex-grow 1
+
+		@media (max-width: 1140px)
+			background-color white
+			left 0
+			opacity 0
+			position absolute
+			right 0
+			top 100px
+			transform translateX(100%) translateZ(0)
+			transition transform .15s ease-in-out, opacity .15s ease-in-out, visibility .15s ease-in-out
+			visibility hidden
+			width 100%
+			z-index 10
+
+	&__menu-left
+		@media (max-width: 1140px)
+			padding-top 3.6rem
+
+	&__menu-right
+		@media (max-width: 1140px)
+			top 37.1rem
+
+	&__logo,
+	&__secondary-logo
+		img
+			height 88px
+			margin 0 1.5rem
+			width 121px
+
+			@media (max-width: 1140px)
+				left 0
+				margin 0 2rem
+				position absolute
+				top .6rem
+
+	&__secondary-logo
+		display none
+
+	&__mobile-menu
+		display none
+
+		@media (max-width: 1140px)
+			display block
+			margin 0 .5rem
+
+	&__contact-btn
+		display none
+
+		@media (max-width: 1140px)
+			display block
+			padding-bottom 3.6rem
+			top 60.6rem
+
+		.btn
+			border-radius .8rem
+			font-size 1.6rem
+			height 4.2rem
+			padding .45rem 3.2rem
+			text-transform uppercase
+			width 21rem
+
+	ul
+		display flex
+		flex-direction row
+		justify-content space-around
+		margin 0
+		width 100%
+
+		@media (max-width: 1140px)
+			align-items center
+			flex-direction column
+
+	li
+		@media (max-width: 1140px)
+			margin-bottom 3.1rem
+
+	a
+		color duck-egg-blue-three
+		text-decoration none
+		text-transform uppercase
+
+		@media (max-width 1140px)
+			color pine-green
+			font-weight 600
+
+.nav__nav-wrapper--opened
+
+	.nav__menu-left,
+	.nav__menu-right,
+	.nav__contact-btn
+		opacity 1
+		transform translateX(0)
+		visibility visible
+
+
+
+
+
+
+
