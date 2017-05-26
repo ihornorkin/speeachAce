@@ -15,6 +15,7 @@ const mainModule = (function () {
 	const cacheDOM = function () {
 		const self = {};
 
+		self.sliderNav = $('.controls');
 		self.sliderControl = $('.controls__wrapper');
 		self.phoneItem = $('.preview__phone');
 		self.contactInput = $('#contact-form input, #contact-form textarea');
@@ -146,13 +147,14 @@ const mainModule = (function () {
 	const mobileMenu = function () {
 		cachedDOM.mobileMenu.on('click', function (e) {
 			e.stopPropagation();
+			console.log($(this));
 			$(this).toggleClass('is-active');
 			cachedDOM.menuWrapper.toggleClass('nav__nav-wrapper--opened');
 		});
 
 		$('.nav__nav-wrapper a').on('click', function (e) {
 			e.stopPropagation();
-			$('.hamburger--spring').removeClass('is-active');
+			$('.hamburger--spring')
 			cachedDOM.menuWrapper.removeClass('nav__nav-wrapper--opened');
 		});
 
@@ -248,35 +250,62 @@ const mainModule = (function () {
 			toggleSlick;
 
 		toggleSlick = function () {
-			if ($window.width() <= 789) {
-				cachedDOM.appsSlider.not('.slick-initialized').slick({
-					dots: true,
-					infinite: false,
-					speed: 300,
-					slidesToShow: 2,
-					slidesToScroll: 1,
-					adaptiveHeight: true,
-					arrows: false,
-					responsive: [
-						{
-							breakpoint: 9999,
-							settings: 'unslick'
-						},
-						{
-							breakpoint: 768,
-							settings: {
-								arrows: true,
-								dots: true,
-								infinite: true,
-								speed: 300,
-								slidesToShow: 1,
-								slidesToScroll: 1,
-								adaptiveHeight: true
-							}
+			cachedDOM.appsSlider.not('.slick-initialized').slick({
+				dots: false,
+				infinite: false,
+				speed: 300,
+				slidesToShow: 3,
+				slidesToScroll: 1,
+				adaptiveHeight: true,
+				asNavFor: cachedDOM.sliderNav,
+				arrows: false,
+				responsive: [
+					{
+						breakpoint: 9999
+						//settings: 'unslick'
+					},
+					{
+						breakpoint: 768,
+						settings: {
+							arrows: true,
+							dots: true,
+							infinite: true,
+							speed: 300,
+							slidesToShow: 1,
+							slidesToScroll: 1,
+							adaptiveHeight: true
 						}
-					]
-				});
-			}
+					}
+				]
+			});
+			cachedDOM.sliderNav.not('.slick-initialized').slick({
+				dots: false,
+				infinite: false,
+				speed: 300,
+				slidesToShow: 3,
+				slidesToScroll: 1,
+				asNavFor: cachedDOM.appsSlider,
+				adaptiveHeight: true,
+				arrows: true,
+				focusOnSelect: true,
+				responsive: [
+					{
+						breakpoint: 9999
+					},
+					{
+						breakpoint: 768,
+						settings: {
+							arrows: true,
+							dots: true,
+							infinite: true,
+							speed: 300,
+							slidesToShow: 1,
+							slidesToScroll: 1,
+							adaptiveHeight: true
+						}
+					}
+				]
+			});
 		};
 
 		$window.resize(toggleSlick);

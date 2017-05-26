@@ -21,13 +21,19 @@
 			margin-bottom 4rem
 
 		.preview__items-wrapper
-			display flex
+			display block
 			flex-direction row
 			justify-content space-between
 
+			.slick-list
+				padding 6rem 0
+
 		.controls
-			display flex
+			display block
 			justify-content space-between
+
+			.slick-list
+				padding-top 2rem
 
 			@media (max-width tablet-down)
 				display none
