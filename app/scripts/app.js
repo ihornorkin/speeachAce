@@ -29,6 +29,8 @@ const mainModule = (function () {
 	};
 
 	const previewPhoneClick = function () {
+		$('.controls__wrapper').removeClass('controls__wrapper--active');
+		$('.controls__wrapper:first-child').addClass('controls__wrapper--active');
 		cachedDOM.phoneItem.on('click', function () {
 			cachedDOM.phoneItem.removeClass('preview__phone--active');
 			const stepIndex = $(this).parent().index();
