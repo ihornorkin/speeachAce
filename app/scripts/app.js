@@ -62,6 +62,11 @@ const mainModule = (function () {
 					window.location.hash = hash;
 				});
 			}
+			if ($(this).hasClass('contact-us')) {
+				setTimeout(function(){
+					$('#btn-contact-us-team').trigger('click');
+				}, 600);
+			}
 		});
 	};
 
