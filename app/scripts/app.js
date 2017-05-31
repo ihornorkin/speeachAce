@@ -297,8 +297,8 @@ const mainModule = (function () {
 					{
 						breakpoint: 768,
 						settings: {
-							arrows: true,
-							dots: true,
+							arrows: false,
+							dots: false,
 							infinite: true,
 							speed: 300,
 							slidesToShow: 1,
