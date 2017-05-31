@@ -52,6 +52,7 @@ const mainModule = (function () {
 	};
 
 	const anchorScroll = function () {
+		$('[href = "#contact-us"]').addClass('contact-us');
 		$('a').on('click', function () {
 			if (this.hash !== '') {
 				// Store hash
@@ -218,7 +219,7 @@ const mainModule = (function () {
 			toggleSlick;
 
 		toggleSlick = function () {
-			if ($window.width() <= 769) {
+			//if ($window.width() <= 769) {
 				cachedDOM.quotesSlider.not('.slick-initialized').slick({
 					dots: true,
 					infinite: false,
@@ -245,7 +246,7 @@ const mainModule = (function () {
 						}
 					]
 				});
-			}
+			//}
 		};
 
 		$window.resize(toggleSlick);
