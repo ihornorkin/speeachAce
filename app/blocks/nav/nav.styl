@@ -66,6 +66,9 @@
 			width 100%
 			z-index 10
 
+		@media (min-width: 1139px) and (max-width: 1141px)
+			transition none
+
 	&__menu-left
 		@media (max-width: 1140px)
 			padding-top 3.6rem
@@ -103,7 +106,7 @@
 		@media (max-width: 1140px)
 			display block
 			padding-bottom 3.6rem
-			top 60.6rem
+			top 55.6rem
 
 		.btn
 			border-radius .8rem
@@ -146,6 +149,10 @@
 		transform translateX(0)
 		visibility visible
 
+#menu-header-right
+	li:last-child
+		@media (max-width tablet)
+			display none
 
 
 

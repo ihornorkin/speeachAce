@@ -15,22 +15,23 @@ const mainModule = (function () {
 	const cacheDOM = function () {
 		const self = {};
 
-		self.sliderNav = $('.controls');
+		self.sliderNav = $('.apps__bottom-description');
 		self.sliderControl = $('.controls__wrapper');
 		self.phoneItem = $('.preview__phone');
-		self.contactInput = $('#contact-form input, #contact-form textarea');
-		self.contactLabel = $('#contact-form label');
+		self.contactInput = $('.modal form input, .modal form textarea');
+		self.contactLabel = $('.modal form label');
 		self.imgSlider = $('.img-slider');
 		self.quotesSlider = $('.quotes');
 		self.mobileMenu = $('.hamburger');
 		self.menuWrapper = $('.nav__nav-wrapper');
 		self.appsSlider = $('.preview__items-wrapper');
+		self.singlePage = $('.single-page');
 		return self;
 	};
 
-	const previewPhoneClick = function () {
-		$('.controls__wrapper').removeClass('controls__wrapper--active');
-		$('.controls__wrapper:first-child').addClass('controls__wrapper--active');
+/*	const previewPhoneClick = function () {
+		//$('.controls__wrapper').removeClass('controls__wrapper--active');
+		//$('.controls__wrapper:first-child').addClass('controls__wrapper--active');
 		cachedDOM.phoneItem.on('click', function () {
 			cachedDOM.phoneItem.removeClass('preview__phone--active');
 			const stepIndex = $(this).parent().index();
@@ -39,9 +40,9 @@ const mainModule = (function () {
 			cachedDOM.sliderControl.removeClass('controls__wrapper--active');
 			cachedDOM.sliderControl.eq(stepIndex).addClass('controls__wrapper--active');
 		});
-	};
+	};*/
 
-	const previewCtrlClick = function () {
+/*	const previewCtrlClick = function () {
 		cachedDOM.sliderControl.on('click', function () {
 			cachedDOM.sliderControl.removeClass('controls__wrapper--active');
 			const stepIndex = $(this).index();
@@ -49,11 +50,15 @@ const mainModule = (function () {
 			cachedDOM.phoneItem.removeClass('preview__phone--active');
 			cachedDOM.phoneItem.eq(stepIndex).addClass('preview__phone--active');
 		});
-	};
+	};*/
 
 	const anchorScroll = function () {
 		$('[href = "#contact-us"]').addClass('contact-us');
-		$('a').on('click', function () {
+		$('a').on('click', function (event) {
+			if ($(this).hasClass('contact-us')) {
+				event.preventDefault();
+				$('#contact-form').modal('show');
+			} else {
 			if (this.hash !== '') {
 				// Store hash
 				const hash = this.hash;
@@ -63,10 +68,6 @@ const mainModule = (function () {
 					window.location.hash = hash;
 				});
 			}
-			if ($(this).hasClass('contact-us')) {
-				setTimeout(function(){
-					$('#btn-contact-us-team').trigger('click');
-				}, 600);
 			}
 		});
 	};
@@ -219,7 +220,7 @@ const mainModule = (function () {
 			toggleSlick;
 
 		toggleSlick = function () {
-			//if ($window.width() <= 769) {
+			if ($window.width() <= 769) {
 				cachedDOM.quotesSlider.not('.slick-initialized').slick({
 					dots: true,
 					infinite: false,
@@ -246,7 +247,7 @@ const mainModule = (function () {
 						}
 					]
 				});
-			//}
+			}
 		};
 
 		$window.resize(toggleSlick);
@@ -265,8 +266,9 @@ const mainModule = (function () {
 				slidesToShow: 3,
 				slidesToScroll: 1,
 				adaptiveHeight: true,
+				arrows: true,
 				asNavFor: cachedDOM.sliderNav,
-				arrows: false,
+				focusOnSelect: true,
 				responsive: [
 					{
 						breakpoint: 9999
@@ -281,7 +283,7 @@ const mainModule = (function () {
 							speed: 300,
 							slidesToShow: 1,
 							slidesToScroll: 1,
-							adaptiveHeight: true
+							adaptiveHeight: false
 						}
 					}
 				]
@@ -289,13 +291,14 @@ const mainModule = (function () {
 			cachedDOM.sliderNav.not('.slick-initialized').slick({
 				infinite: false,
 				dots: false,
-				speed: 300,
-				slidesToShow: 3,
+				speed: 400,
+				fade: true,
+				slidesToShow: 1,
 				slidesToScroll: 1,
 				asNavFor: cachedDOM.appsSlider,
+				draggable: false,
 				adaptiveHeight: true,
 				arrows: true,
-				focusOnSelect: true,
 				responsive: [
 					{
 						breakpoint: 9999
@@ -320,10 +323,18 @@ const mainModule = (function () {
 		toggleSlick();
 	};
 
+	const page = function () {
+		$(window).on('load', function () {
+			if (cachedDOM.singlePage.length > 0) {
+				$('html').addClass('single-html');
+			}
+		});
+	}
+
 	const init = function () {
 		cachedDOM = cacheDOM();
-		previewPhoneClick();
-		previewCtrlClick();
+		//previewPhoneClick();
+		//previewCtrlClick();
 		anchorScroll();
 		contactFormInput();
 		stickyHeader();
@@ -333,6 +344,7 @@ const mainModule = (function () {
 		quotesSlider();
 		whatWeDoSlider();
 		appsSlider();
+		page();
 	};
 
 	return {

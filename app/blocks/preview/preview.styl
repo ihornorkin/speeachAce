@@ -5,12 +5,35 @@
 		margin-bottom 0.9rem
 
 	&__item
-		display flex
+		//display flex
+		display block
 		flex-grow 1
 		justify-content center
 
+	.slick-current
+
+		.preview__descr
+			color avocado-two
+
+		.preview__phone
+			transform scale(1.14)
+
+			img
+				box-shadow: 0 0 25px 0 rgba(0,53,118,0.25);
+
+		.controls__item
+			border solid 4px avocado-two
+			height 3.6rem
+			width 3.6rem
+
+		.controls__inner
+			background-color avocado-two
+			visibility visible
+			transform scale(1)
+			opacity 1
+
 		@media (max-width tablet-down)
-			padding 1rem
+			//padding 1rem
 
 	&__phone
 		border-radius 27px / 31px 31px 31px 31px
@@ -27,19 +50,39 @@
 				box-shadow none
 				transform none
 
+	&__download
+		margin-top 2.4rem
+		display flex
+		align-items center
+		justify-content center
+		height 7rem
+
+		@media (max-width tablet)
+			margin-top 8.4rem
+			height auto
+			display block
+
+		img
+			border-radius 0 !important
+
 	&__descr
-		color avocado-two
+		color azure
 		display flex
 		flex-direction column
 		font-size 15.9px
 		font-weight 500
 		line-height 1.51
-		padding 2rem
+		padding 0 2rem 0 2rem
+		height 12.4rem
+		display flex
+		align-items center
+		justify-content center
 		text-align center
 		text-transform uppercase
 
-		@media (min-width tablet)
-			display none
+		@media (max-width tablet-down)
+			height auto
+			padding 6rem 2rem 1rem 2rem
 
 	.slick-slide img
 		border-radius 27px / 31px 31px 31px 31px
@@ -48,14 +91,31 @@
 
 	.slick-next,
 	.slick-prev
-		top 88%
+		top 83%
 		z-index 1
+		width 16px
+		height 23px
+
+		@media (max-width tablet)
+			top 75%
 
 	.slick-prev
-		left .3rem
+		left 28.3rem
+
+		@media (max-width tablet-up)
+			left 22rem
+
+		@media (max-width tablet)
+			left 0.3rem
 
 	.slick-next
-		right .3rem
+		right 28.3rem
+
+		@media (max-width tablet-up)
+			right 22rem
+
+		@media (max-width tablet)
+			right 0.3rem
 
 	.slick-prev:before,
 	.slick-next:before
@@ -74,14 +134,25 @@
 
 	.slick-dots
 		bottom -2.8rem
+		@media (max-width tablet)
+			bottom 10.3rem
 
 .controls
 	&__wrapper
 		display flex
 		flex-grow 1
 		justify-content center
-		//margin-bottom 7.5rem
+		margin-top 7rem
 		position relative
+
+		.controls__line
+			border-bottom 2px solid bright-cyan
+			opacity .25
+			display block
+			left 50%
+			position absolute
+			top 0
+			width 100%
 
 		&:not(:last-child)
 			.controls__line
@@ -132,6 +203,13 @@
 		width 20px
 		z-index 1
 
+		@media (max-width mobile)
+			display none
+
+	&__line
+		@media (max-width mobile)
+			display none
+
 	&__description
 		align-items center
 		color azure
@@ -145,3 +223,8 @@
 		position relative
 		text-align center
 		text-transform uppercase
+
+		@media (max-width tablet)
+			padding-top 0
+			top -2rem
+			color #7db52d

@@ -65,7 +65,7 @@
 
 	&__logos
 		clearfix()
-		margin-bottom 4.8rem
+		margin-bottom 3.5rem
 
 		@media (max-width tablet-down)
 			margin-bottom 1rem
@@ -75,6 +75,8 @@
 
 		iframe
 			width 50rem
+			display block
+			margin 0 auto
 
 			@media (max-width 992px)
 				margin 0 auto
@@ -129,10 +131,16 @@
 		retina('../images/lines.png', 3, 688px 446px, center center no-repeat)
 
 	.checked-list
-		margin-top 3.5rem
+		margin-top -0.4rem
+		margin-left 2rem
 
-		@media (max-width tablet-down)
-			margin-top 1rem
+		@media (max-width tablet-up)
+			margin-top 2rem
+			margin-left 0
+
+		@media (max-width tablet)
+			margin-top 2rem
+			margin-left 0
 
 	.play-button
 		position absolute
@@ -155,7 +163,7 @@
 		z-index 10
 
 		@media (max-width tablet-down)
-			bottom -9.5rem
+			bottom -18.5rem
 			left 0
 			margin-bottom 0
 			position absolute
@@ -165,6 +173,9 @@
 			margin 0 1.5rem
 			width 28rem
 			text-transform uppercase
+
+			@media (max-width 992px)
+				margin .8rem 1.5rem
 
 			@media (max-width tablet-down)
 				margin .8rem 1.5rem

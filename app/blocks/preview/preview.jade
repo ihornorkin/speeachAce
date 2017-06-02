@@ -2,53 +2,70 @@ mixin preview()
 	+b.preview
 		+e.items-wrapper
 			+e.item
-				+e.phone.--active
+				+e.phone
 					img.img-responsive(src="images/speechace-ios.png" data-rjs="3")
+				+b.controls
+					+e.wrapper
+						+e.item
+							+e.inner
+						+e.line
 
 				+e.descr
 					span SPEECHACE APP
 					span (ios)
 
+				+e.download(class="text-center")
+					a(src="3")
+						img(src="images/download-on-the-app-store-badge-us-uk-135-x-40.png" data-rjs="3")
+
 			+e.item
 				+e.phone
 					img.img-responsive(src="images/speechace-ios.png" data-rjs="3")
+				+b.controls
+					+e.wrapper
+						+e.item
+							+e.inner
+						+e.line
 
 				+e.descr
 					span Englace
 					span (ios)
+
+				+e.download(class="text-center")
+					a(src="3")
+						img(src="images/download-on-the-app-store-badge-us-uk-135-x-40.png" data-rjs="3")
 
 			+e.item
 				+e.phone
 					img.img-responsive(src="images/speechace-android.png" data-rjs="3")
+				+b.controls
+					+e.wrapper
+						+e.item
+							+e.inner
+						+e.line
 
 				+e.descr
 					span SPEECHACE APP
 					span (ANdroid/Chrome)
 
-		+b.controls
-			+e.wrapper.--active
-				+e.item
-					+e.inner
-				+e.line
+				+e.download(class="text-center")
+					a(src="3")
+						img(src="images/download-on-the-app-store-badge-us-uk-135-x-40.png" data-rjs="3")
 
-				+e.description
-					span SPEECHACE APP
-					span (ios)
+			+e.item
+				+e.phone
+					img.img-responsive(src="images/speechace-android.png" data-rjs="3")
+				+b.controls
+					+e.wrapper
+						+e.item
+							+e.inner
+						+e.line
 
-			+e.wrapper
-				+e.item
-					+e.inner
-				+e.line
-
-				+e.description
-					span Englace
-					span (ios)
-
-			+e.wrapper
-				+e.item
-					+e.inner
-				+e.line
-
-				+e.description
+				+e.descr
 					span SPEECHACE APP
 					span (ANdroid/Chrome)
+
+				+e.download(class="text-center")
+					a(src="3")
+						img(src="images/download-on-the-app-store-badge-us-uk-135-x-40.png" data-rjs="3")
+

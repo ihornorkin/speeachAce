@@ -3,6 +3,21 @@
 	position relative
 	text-align center
 
+	&:before
+		content: ''
+		position absolute
+		width 100%
+		height 100%
+		top 0
+		left 50%
+		transform translateX(-50%)
+		background-image url(../images/world-map-bottom.png);
+		background-repeat no-repeat
+
+	.container
+		position relative
+		z-index: 120
+
 	&__logo
 		display flex
 		justify-content center
@@ -63,7 +78,8 @@
 			&:active
 				color bright-cyan
 
-	&__copyright
+	&__copyrigth
+
 		p
 			font-weight 600
 			margin-bottom 2.5rem

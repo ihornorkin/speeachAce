@@ -31,9 +31,15 @@
 		transform translate(-50%, -50%)
 		width 50%
 
+		@media (max-width tablet-up)
+			width 75.22%
+
 		@media (max-width tablet-down)
 			top 34%
-			width 70%
+			width 75.22%
+
+		@media (max-width mobile)
+			width 75.22%
 
 	&__heading
 		color azure
@@ -46,3 +52,13 @@
 			font-size 4.2rem
 			line-height 1.14
 
+		@media (max-width 460px)
+			width 100%
+
+		@media (max-width 400px)
+			display block
+			margin 0 auto
+			width 80.76%
+
+		@media (max-width 330px)
+			width 100%
