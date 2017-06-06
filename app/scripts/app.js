@@ -5,9 +5,10 @@ import 'retinajs';
 import 'bootstrap';
 
 
-$(() => {
+/*$(() = > {
 	svg4everybody();
-});
+})
+;*/
 
 const mainModule = (function () {
 	let cachedDOM = {};
@@ -29,45 +30,51 @@ const mainModule = (function () {
 		return self;
 	};
 
-/*	const previewPhoneClick = function () {
-		//$('.controls__wrapper').removeClass('controls__wrapper--active');
-		//$('.controls__wrapper:first-child').addClass('controls__wrapper--active');
-		cachedDOM.phoneItem.on('click', function () {
-			cachedDOM.phoneItem.removeClass('preview__phone--active');
-			const stepIndex = $(this).parent().index();
+	/*	const previewPhoneClick = function () {
+	 //$('.controls__wrapper').removeClass('controls__wrapper--active');
+	 //$('.controls__wrapper:first-child').addClass('controls__wrapper--active');
+	 cachedDOM.phoneItem.on('click', function () {
+	 cachedDOM.phoneItem.removeClass('preview__phone--active');
+	 const stepIndex = $(this).parent().index();
 
-			$(this).addClass('preview__phone--active');
-			cachedDOM.sliderControl.removeClass('controls__wrapper--active');
-			cachedDOM.sliderControl.eq(stepIndex).addClass('controls__wrapper--active');
-		});
-	};*/
+	 $(this).addClass('preview__phone--active');
+	 cachedDOM.sliderControl.removeClass('controls__wrapper--active');
+	 cachedDOM.sliderControl.eq(stepIndex).addClass('controls__wrapper--active');
+	 });
+	 };*/
 
-/*	const previewCtrlClick = function () {
-		cachedDOM.sliderControl.on('click', function () {
-			cachedDOM.sliderControl.removeClass('controls__wrapper--active');
-			const stepIndex = $(this).index();
-			$(this).addClass('controls__wrapper--active');
-			cachedDOM.phoneItem.removeClass('preview__phone--active');
-			cachedDOM.phoneItem.eq(stepIndex).addClass('preview__phone--active');
-		});
-	};*/
+	/*	const previewCtrlClick = function () {
+	 cachedDOM.sliderControl.on('click', function () {
+	 cachedDOM.sliderControl.removeClass('controls__wrapper--active');
+	 const stepIndex = $(this).index();
+	 $(this).addClass('controls__wrapper--active');
+	 cachedDOM.phoneItem.removeClass('preview__phone--active');
+	 cachedDOM.phoneItem.eq(stepIndex).addClass('preview__phone--active');
+	 });
+	 };*/
 
 	const anchorScroll = function () {
-		$('[href = "#contact-us"]').addClass('contact-us');
+		$('.nav__nav-wrapper a').each(function () {
+			var link = $(this).text().toLowerCase();
+			if (link == 'contact us') {
+				$(this).addClass('contact-us');
+			}
+				});
 		$('a').on('click', function (event) {
 			if ($(this).hasClass('contact-us')) {
-				event.preventDefault();
-				$('#contact-form').modal('show');
+				var modalLink = $(this).attr('href');
+				$(modalLink).modal('show');
+				return false;
 			} else {
-			if (this.hash !== '') {
-				// Store hash
-				const hash = this.hash;
-				$('html, body').animate({
-					scrollTop: $(hash).offset().top
-				}, 600, function () {
-					window.location.hash = hash;
-				});
-			}
+				if (this.hash !== '') {
+					// Store hash
+					const hash = this.hash;
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top
+					}, 600, function () {
+						window.location.hash = hash;
+					});
+				}
 			}
 		});
 	};
@@ -156,14 +163,13 @@ const mainModule = (function () {
 	const mobileMenu = function () {
 		cachedDOM.mobileMenu.on('click', function (e) {
 			e.stopPropagation();
-			console.log($(this));
 			$(this).toggleClass('is-active');
 			cachedDOM.menuWrapper.toggleClass('nav__nav-wrapper--opened');
 		});
 
 		$('.nav__nav-wrapper a').on('click', function (e) {
 			e.stopPropagation();
-			$('.hamburger--spring')
+			$('.hamburger--spring').removeClass('is-active');
 			cachedDOM.menuWrapper.removeClass('nav__nav-wrapper--opened');
 		});
 
