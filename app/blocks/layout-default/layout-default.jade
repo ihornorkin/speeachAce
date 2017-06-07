@@ -2,14 +2,7 @@ include /../node_modules/bemto.jade/bemto
 include /../node_modules/jade-injected/jade-injected
 include ../page/page
 include ../scripts/scripts
-include ../intro-section/intro-section
-include ../what-we-do/what-we-do
-include ../section-api/section-api
-include ../our-team/our-team
-include ../trusted/trusted
-include ../management-system/management-system
 include ../footer/footer
-include ../apps/apps
 
 - set_bemto_settings({ modifier: '--' })
 
@@ -17,15 +10,7 @@ doctype html
 html(lang='ru')
 	include ../head/head
 	+page
-		+intro-section
-		+what-we-do
-		+section-api
-		+apps
-		+management-system
-		+trusted
-		+our-team
 		+footer
 
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js')
-		script(src='libs/headroom/src/headroom.min.js')
 		+scripts(['app.min.js'])
